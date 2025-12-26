@@ -2,7 +2,7 @@
 
 
 ###############
-'''
+```
 
 wool-plm-agent-system/
 ├── .github/                # CI/CD workflows for testing agents
@@ -31,11 +31,11 @@ wool-plm-agent-system/
 ├── pyproject.toml          # Modern dependency management
 ├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
 └── README.md               # Project overview and lifecycle goals
-'''
+```
 
 ########
 
-'''
+```
 wool-plm-agent-system/
 ├── .github/workflows/      # Automated CI/CD for agent testing & model eval
 ├── config/
@@ -60,11 +60,11 @@ wool-plm-agent-system/
 │       └── lca_analyzer.py # Life Cycle Assessment for sustainability
 ├── requirements.txt        # Updated: torch, langchain-google-genai, openai, pygad
 └── README.md               # Documentation of the self-evolving PLM system
-'''
+```
 
 ###      ########
 
-'''
+```
 mechanical-agentic-ai/
 ├── .github/                # Keep your CI/CD (High Quality)
 ├── docs/                   # Keep your Documentation structure
@@ -109,4 +109,4 @@ mechanical-agentic-ai/
 ├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
 ├── requirements.txt                   # Add: pygad, langchain-google-genai, openai
 └── README.md               
-'''
+```
