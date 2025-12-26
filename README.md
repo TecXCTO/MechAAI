@@ -110,3 +110,30 @@ mechanical-agentic-ai/
 ├── requirements.txt                   # Add: pygad, langchain-google-genai, openai
 └── README.md               
 ```
+
+```
+mechanical-ai-system/
+├── .github/workflows/       # CI/CD for automated stress testing
+├── docs/                    # Engineering specs & Life Cycle maps
+├── data/
+│   ├── cad_library/         # Versioned .STEP/.STL files
+│   └── materials_db/        # CSV/JSON material properties
+├── src/
+│   ├── domain/              # UNIT 1: Pure Engineering Rules
+│   │   ├── physics.py       # Stress/Strain formulas
+│   │   └── materials.py     # Material entity definitions
+│   ├── repositories/        # UNIT 2: The Data Gate (Interfaces)
+│   │   ├── base_repo.py     # ABC for data access
+│   │   └── cad_repo.py      # ABC for CAD file management
+│   ├── adapters/            # UNIT 3: External Tool Connections
+│   │   ├── cad/             # SolidWorks/FreeCAD specific code
+│   │   ├── llm/             # LangChain/AI agent logic
+│   │   └── database/        # PostgreSQL/SQLAlchemy logic
+│   ├── agents/              # UNIT 4: Orchestration
+│   │   └── designer_agent.py# The AI "Mechanical Agent" loop
+│   └── main.py              # Entry point (FastAPI or CLI)
+├── tests/                   # Validation suites
+├── pyproject.toml           # Modern Python packaging (2025)
+└── README.md                # Setup & Usage
+
+```
