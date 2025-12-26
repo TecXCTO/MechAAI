@@ -137,3 +137,20 @@ mechanical-ai-system/
 └── README.md                # Setup & Usage
 
 ```
+
+```
+mechanical-ai-agent/
+├── .github/workflows/   # Automated testing (CI/CD) and security scans
+├── docs/                # spec.md, design decisions, and manuals
+├── data/                # raw/ and processed/ engineering data
+├── src/
+│   ├── domain/          # Pure physics and engineering models
+│   ├── use_cases/       # Lifecyle workflows (e.g. design_validation.py)
+│   ├── repositories/    # Repository interfaces and implementations
+│   ├── agents/          # AI reasoning and tool-calling logic
+│   └── main.py          # Entry point (often a FastAPI app)
+├── tests/               # Unit and integration tests for your agent
+├── Dockerfile           # For containerized deployment
+└── README.md            # Project overview and setup instructions
+
+```
