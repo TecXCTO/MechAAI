@@ -113,16 +113,17 @@ wool-plm-agent-system/
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
 │   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
 │   │
-│   ├── evolution/          # Genetic Algorithm engine        <-- [ADD] THE SELF-GENERATION ENGINE
+│   ├── evolution/          # Genetic Algorithm engine, <-- [ADD] THE SELF-GENERATION ENGINE # THE NEUROEVOLUTION ENGINE
 │   │   ├── __init__.py
-│   │   ├── crossover.py    # Logic for merging model architectures
+│   │   ├── crossover.py    # Logic for merging model architectures # Logic for merging neural network "genomes"
 │   │   ├── fitness.py      # PLM-specific evaluation metrics
-│   │   ├── mutation.py     # Hyperparameter and layer mutations
+│   │   ├── mutation.py     # Hyperparameter and layer mutations, # Handles stochastic layer/param changes
 │   │   │── population.py   # Manages generations of neural networks
 │   │   ├── genome_handler.py # Encodes Neural Net layers as "Genes"
 │   │   ├── crossover_mutation.py      # Genetic Algorithm operators
 │   │   ├── fitness_evaluator.py       # Tests evolved models against Wool data
-│   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE
+│   │   ├── fitness_engine.py   # Evaluates models on wool mechanical properties
+│   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE,  # SCRIPT TO GENERATE NEW NEURAL NETWORKS 
 │   │
 │   ├── core/               
 │   │   ├── models/           # Pre-trained and evolved model classes
