@@ -138,6 +138,52 @@ mechanical-ai-system/
 
 ```
 
+
+```
+
+wool-plm-agent-system/
+├── .github/                # CI/CD workflows for testing agents
+|   ├── .github/workflows/   # Automated testing (CI/CD) and security scans
+├── config/                 # YAML/JSON configs for models & GA params
+├── data/                   # Raw wool fiber scans and CAD specs (gitignored) # raw/ and processed/ engineering data
+│   ├── processed/          # Processed engineering data
+│   ├── raw/                # Raw engineering data
+├── docs/                   # Technical documentation for PLM workflows # spec.md, design decisions, and manuals
+│   ├── spec.md
+├── evolution/              # Genetic Algorithm engine
+│   ├── crossover.py        # Logic for merging model architectures
+│   ├── fitness.py          # PLM-specific evaluation metrics
+│   ├── mutation.py         # Hyperparameter and layer mutations
+│   └── population.py       # Manages generations of neural networks
+├── src/                    # Primary source code
+│   ├── domain/          # Pure physics and engineering models
+│   │   ├── physics.py       # Stress/Strain formulas
+│   │   └── materials.py     # Material entity definitions
+│   ├── use_cases/       # Lifecyle workflows (e.g. design_validation.py)
+│   │  ├── design_validation.py
+│   ├── repositories/    # Repository interfaces and implementations
+│   ├── agents/          # AI reasoning and tool-calling logic
+│   ├── agents/             # Role-based agent definitions
+│   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
+│   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
+│   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
+│   ├── models/             # Pre-trained and evolved model classes
+│   │   ├── base_network.py # Blueprint for deep learning models
+│   │   └── multimodal.py   # Fusion logic for text/image/audio inputs
+│   ├── tools/              # Specialized mechanical engineering tools
+│   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
+│   │   └── simulation.py   # Physics-based simulation wrappers
+│   ├── utils/              # Helper functions for API and data handling
+│   └── main.py          # Entry point (often a FastAPI app)
+├── tests/                  # Unit tests for agents and GA logic
+├── .gitignore              # Standard Python and large data exclusions
+├── pyproject.toml          # Modern dependency management
+├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
+├── Dockerfile           # For containerized deployment
+└── README.md               # Project overview and lifecycle goals
+```
+
+
 ```
 mechanical-ai-agent/
 ├── .github/workflows/   # Automated testing (CI/CD) and security scans
@@ -155,43 +201,4 @@ mechanical-ai-agent/
 ├── Dockerfile           # For containerized deployment
 └── README.md            # Project overview and setup instructions
 
-```
-```
-
-wool-plm-agent-system/
-├── .github/                # CI/CD workflows for testing agents
-├── .github/workflows/   # Automated testing (CI/CD) and security scans
-├── config/                 # YAML/JSON configs for models & GA params
-├── data/                   # Raw wool fiber scans and CAD specs (gitignored)
-├── docs/                   # Technical documentation for PLM workflows
-├── evolution/              # Genetic Algorithm engine
-│   ├── crossover.py        # Logic for merging model architectures
-│   ├── fitness.py          # PLM-specific evaluation metrics
-│   ├── mutation.py         # Hyperparameter and layer mutations
-│   └── population.py       # Manages generations of neural networks
-├── src/                    # Primary source code
-│   ├── domain/          # Pure physics and engineering models
-│   │   ├── physics.py       # Stress/Strain formulas
-│   │   └── materials.py     # Material entity definitions
-│   ├── use_cases/       # Lifecyle workflows (e.g. design_validation.py)
-│   ├── repositories/    # Repository interfaces and implementations
-│   ├── agents/          # AI reasoning and tool-calling logic
-│   ├── agents/             # Role-based agent definitions
-│   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
-│   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
-│   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
-│   ├── models/             # Pre-trained and evolved model classes
-│   │   ├── base_network.py # Blueprint for deep learning models
-│   │   └── multimodal.py   # Fusion logic for text/image/audio inputs
-│   ├── tools/              # Specialized mechanical engineering tools
-│   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
-│   │   └── simulation.py   # Physics-based simulation wrappers
-│   └── utils/              # Helper functions for API and data handling
-│   └── main.py          # Entry point (often a FastAPI app)
-├── tests/                  # Unit tests for agents and GA logic
-├── .gitignore              # Standard Python and large data exclusions
-├── pyproject.toml          # Modern dependency management
-├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
-├── Dockerfile           # For containerized deployment
-└── README.md               # Project overview and lifecycle goals
 ```
