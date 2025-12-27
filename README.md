@@ -125,13 +125,9 @@ wool-plm-agent-system/
 │   ├── materials_db/       # CSV/JSON material properties
 │   ├── processed/          # Processed engineering data
 │   ├── raw/                # Raw engineering data
-├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,                                       Engineering specs & Life Cycle maps
+├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,        │                              Engineering specs & Life Cycle maps
 │   ├── spec.md
-├── evolution/              # Genetic Algorithm engine
-│   ├── crossover.py        # Logic for merging model architectures
-│   ├── fitness.py          # PLM-specific evaluation metrics
-│   ├── mutation.py         # Hyperparameter and layer mutations
-│   └── population.py       # Manages generations of neural networks
+¹
 ├── src/                    # Primary source code
 │   ├── domain/             # UNIT 1: Pure Engineering Rules # Pure physics and engineering models
 │   │   ├── physics.py      # Stress/Strain formulas
@@ -145,19 +141,45 @@ wool-plm-agent-system/
 │   │   ├── cad/            # SolidWorks/FreeCAD specific code
 │   │   ├── llm/            # LangChain/AI agent logic
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
-│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent definitions
-│   │   └── designer_agent.py # The AI "Mechanical Agent" loop
+│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent definiti    
+│   │   ├── base_agent.py    
+│   │   ├── orchestration_agent/ 
+│   │   │   ├── workflow_manager.py
+│   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
+│   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
+│   │       ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
+│   │       └── sustainability_lca.py  # Life cycle/Biodegradability tracking
+│   │   ├── design_agent/
+│   │   ├── designer_agent.py # The AI "Mechanical Agent" loop
 │   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
 │   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
-│   ├── models/             # Pre-trained and evolved model classes
-│   │   ├── base_network.py # Blueprint for deep learning models
-│   │   └── multimodal.py   # Fusion logic for text/image/audio inputs
+│   │
+│   ├── evolution/                     <-- [ADD] THE SELF-GENERATION ENGINE
+│   │   ├── __init__.py
+│   │   ├── genome_handler.py          # Encodes Neural Net layers as "Genes"
+│   │   ├── crossover_mutation.py      # Genetic Algorithm operators
+│   │   ├── fitness_evaluator.py       # Tests evolved models against Wool data
+│   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE
+│   │
+│   ├── core/               
+│   │   ├── models/           # Pre-trained and evolved model classes
+│   │   │   ├── base_architectures.py
+│   │   │   ├── base_network.py # Blueprint for deep learning models
+│   │   │   │── multimodal.py   # Fusion logic for text/image/audio inputs
+│   │   │   └── evolved_models/        <-- [ADD] Destination for GA-generated models
+│   │   └── knowledge_base/ 
+│   │       ├── material_database.py   # Add Wool Grade/Micron data here
+│   │       └── textile_physics_rules.py <-- [ADD] Mechanical rules for wool
+│   │
+│   ├── integrations/       # Keep your SolidWorks/Ansys APIs
+│   │   └── wool_supply_chain/         <-- [ADD] API for wool sourcing/farming data
 │   ├── tools/              # Specialized mechanical engineering tools
 │   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
 │   │   └── simulation.py   # Physics-based simulation wrappers
 │   ├── utils/              # Helper functions for API and data handling
-│   └── main.py             # Entry point (often a FastAPI app)
+│   └── main.py             # Entry point (often a FastAPI app), (Triggers either Agent mode or Evolution mode)
+│
 ├── tests/                  # Unit tests for agents and GA logic
 ├── .gitignore              # Standard Python and large data exclusions
 ├── pyproject.toml          # Modern dependency management
