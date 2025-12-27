@@ -64,52 +64,6 @@ wool-plm-agent-system/
 
 ###      ########
 
-```
-mechanical-agentic-ai/
-├── .github/                # Keep your CI/CD (High Quality)
-├── docs/                   # Keep your Documentation structure
-├── src/                    
-│   ├── agents/             
-│   │   ├── base_agent.py   
-│   │   ├── design_agent/   
-│   │   ├── orchestration_agent/ 
-│   │   │   ├── workflow_manager.py
-│   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
-│   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
-│   │       ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
-│   │       └── sustainability_lca.py  # Life cycle/Biodegradability tracking
-│   │
-│   ├── evolution/                     <-- [ADD] THE SELF-GENERATION ENGINE
-│   │   ├── __init__.py
-│   │   ├── genome_handler.py          # Encodes Neural Net layers as "Genes"
-│   │   ├── crossover_mutation.py      # Genetic Algorithm operators
-│   │   ├── fitness_evaluator.py       # Tests evolved models against Wool data
-│   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE
-│   │
-│   ├── core/               
-│   │   ├── models/         
-│   │   │   ├── base_architectures.py 
-│   │   │   └── evolved_models/        <-- [ADD] Destination for GA-generated models
-│   │   └── knowledge_base/ 
-│   │       ├── material_database.py   # Add Wool Grade/Micron data here
-│   │       └── textile_physics_rules.py <-- [ADD] Mechanical rules for wool
-│   │
-│   ├── integrations/       # Keep your SolidWorks/Ansys APIs
-│   │   └── wool_supply_chain/         <-- [ADD] API for wool sourcing/farming data
-│   │
-│   └── main.py             # Entry point (Triggers either Agent mode or Evolution mode)
-│
-├── notebooks/              # Keep for experimentation
-├── tests/                  # Keep for quality control
-├── data/                   
-│   ├── wool_samples/                  <-- [ADD] Dataset for fiber strength/images
-│   └── evolved_variants/              <-- [ADD] Storage for generated model weights
-├── scripts/                
-│   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
-├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
-├── requirements.txt                   # Add: pygad, langchain-google-genai, openai
-└── README.md               
-```
 
 
 
@@ -125,9 +79,13 @@ wool-plm-agent-system/
 │   ├── materials_db/       # CSV/JSON material properties
 │   ├── processed/          # Processed engineering data
 │   ├── raw/                # Raw engineering data
-├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,        │                              Engineering specs & Life Cycle maps
+│   ├── wool_samples/                  <-- [ADD] Dataset for fiber strength/images
+│   └── evolved_variants/              <-- [ADD] Storage for generated model weights
+├── scripts/                
+│   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
+├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
+├── docs/                   # Technical documentation for PLM workflows, spec.md, design decisions, and manuals,        │                              Engineering specs & Life Cycle maps # Keep your Documentation structure
 │   ├── spec.md
-¹
 ├── src/                    # Primary source code
 │   ├── domain/             # UNIT 1: Pure Engineering Rules # Pure physics and engineering models
 │   │   ├── physics.py      # Stress/Strain formulas
@@ -155,9 +113,13 @@ wool-plm-agent-system/
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
 │   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
 │   │
-│   ├── evolution/                     <-- [ADD] THE SELF-GENERATION ENGINE
+│   ├── evolution/          # Genetic Algorithm engine        <-- [ADD] THE SELF-GENERATION ENGINE
 │   │   ├── __init__.py
-│   │   ├── genome_handler.py          # Encodes Neural Net layers as "Genes"
+│   │   ├── crossover.py    # Logic for merging model architectures
+│   │   ├── fitness.py      # PLM-specific evaluation metrics
+│   │   ├── mutation.py     # Hyperparameter and layer mutations
+│   │   │── population.py   # Manages generations of neural networks
+│   │   ├── genome_handler.py # Encodes Neural Net layers as "Genes"
 │   │   ├── crossover_mutation.py      # Genetic Algorithm operators
 │   │   ├── fitness_evaluator.py       # Tests evolved models against Wool data
 │   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE
@@ -180,7 +142,8 @@ wool-plm-agent-system/
 │   ├── utils/              # Helper functions for API and data handling
 │   └── main.py             # Entry point (often a FastAPI app), (Triggers either Agent mode or Evolution mode)
 │
-├── tests/                  # Unit tests for agents and GA logic
+├── notebooks/              # Keep for experimentation
+├── tests/                  # Unit tests for agents and GA logic # Keep for quality control
 ├── .gitignore              # Standard Python and large data exclusions
 ├── pyproject.toml          # Modern dependency management
 ├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
@@ -234,3 +197,53 @@ mechanical-ai-system/
 └── README.md                # Setup & Usage
 
 ```
+
+
+
+```
+mechanical-agentic-ai/
+├── .github/                # Keep your CI/CD (High Quality)
+├── docs/                   # Keep your Documentation structure
+├── src/                    
+│   ├── agents/             
+│   │   ├── base_agent.py   
+│   │   ├── design_agent/   
+│   │   ├── orchestration_agent/ 
+│   │   │   ├── workflow_manager.py
+│   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
+│   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
+│   │       ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
+│   │       └── sustainability_lca.py  # Life cycle/Biodegradability tracking
+│   │
+│   ├── evolution/                     <-- [ADD] THE SELF-GENERATION ENGINE
+│   │   ├── __init__.py
+│   │   ├── genome_handler.py          # Encodes Neural Net layers as "Genes"
+│   │   ├── crossover_mutation.py      # Genetic Algorithm operators
+│   │   ├── fitness_evaluator.py       # Tests evolved models against Wool data
+│   │   └── model_generator.py         # AUTO-WRITES NEW PYTHON MODEL CODE
+│   │
+│   ├── core/               
+│   │   ├── models/         
+│   │   │   ├── base_architectures.py 
+│   │   │   └── evolved_models/        <-- [ADD] Destination for GA-generated models
+│   │   └── knowledge_base/ 
+│   │       ├── material_database.py   # Add Wool Grade/Micron data here
+│   │       └── textile_physics_rules.py <-- [ADD] Mechanical rules for wool
+│   │
+│   ├── integrations/       # Keep your SolidWorks/Ansys APIs
+│   │   └── wool_supply_chain/         <-- [ADD] API for wool sourcing/farming data
+│   │
+│   └── main.py             # Entry point (Triggers either Agent mode or Evolution mode)
+│
+├── notebooks/              # Keep for experimentation
+├── tests/                  # Keep for quality control
+├── data/                   
+│   ├── wool_samples/                  <-- [ADD] Dataset for fiber strength/images
+│   └── evolved_variants/              <-- [ADD] Storage for generated model weights
+├── scripts/                
+│   └── run_evolution.py               <-- [ADD] Start the Genetic Algorithm loop
+├── .env.template                      <-- [ADD] For OPENAI_API_KEY & GOOGLE_API_KEY
+├── requirements.txt                   # Add: pygad, langchain-google-genai, openai
+└── README.md               
+```
+
