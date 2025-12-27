@@ -74,6 +74,9 @@ wool-plm-agent-system/
 ├── .github/                # CI/CD workflows for testing agents
 |   ├── workflows/          # Automated testing (CI/CD) and security scans
 ├── config/                 # YAML/JSON configs for models & GA params
+│   ├── agents.yaml         # Configuration for OpenAI and Google model roles
+│   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
+│   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
 ├── data/                   # Raw wool fiber scans and CAD specs (gitignored) # raw/ and processed/ engineering data
 │   ├── cad_library/        # Versioned .STEP/.STL files
 │   ├── materials_db/       # CSV/JSON material properties
