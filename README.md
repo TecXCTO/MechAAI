@@ -33,37 +33,6 @@ wool-plm-agent-system/
 └── README.md               # Project overview and lifecycle goals
 ```
 
-########
-
-```
-wool-plm-agent-system/
-├── .github/workflows/      # Automated CI/CD for agent testing & model eval
-├── config/
-│   ├── agents.yaml         # Configuration for OpenAI and Google model roles
-│   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
-│   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
-├── evolution/              # THE NEUROEVOLUTION ENGINE
-│   ├── crossover.py        # Logic for merging neural network "genomes"
-│   ├── fitness_engine.py   # Evaluates models on wool mechanical properties
-│   ├── mutation.py         # Handles stochastic layer/param changes
-│   └── model_generator.py  # SCRIPT TO GENERATE NEW NEURAL NETWORKS
-├── src/
-│   ├── agents/             # MULTIMODAL AGENT ORCHESTRATION
-│   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
-│   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
-│   │   └── supervisor.py   # LangGraph/CrewAI orchestrator to manage handoffs
-│   ├── engines/            # CORE COMPUTATIONAL MODELS
-│   │   ├── generative.py   # Generative algorithms for 3D wool structures
-│   │   └── deep_learning.py# Deep learning for predictive maintenance
-│   └── tools/              # MECHANICAL ENGINEERING UTILITIES
-│       ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
-│       └── lca_analyzer.py # Life Cycle Assessment for sustainability
-├── requirements.txt        # Updated: torch, langchain-google-genai, openai, pygad
-└── README.md               # Documentation of the self-evolving PLM system
-```
-
-###      ########
-
 
 
 
@@ -160,9 +129,9 @@ wool-plm-agent-system/
 ├── tests/                  # Unit tests for agents and GA logic # Keep for quality control
 ├── .gitignore              # Standard Python and large data exclusions
 ├── pyproject.toml          # Modern dependency management
-├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
+├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, torch, langchain-google-genai, openai, pygad)
 ├── Dockerfile              # For containerized deployment
-└── README.md               # Project overview and lifecycle goals
+└── README.md               # Project overview and lifecycle goals, # Documentation of the self-evolving PLM system
 ```
 
 
@@ -261,3 +230,66 @@ mechanical-agentic-ai/
 └── README.md               
 ```
 
+
+
+########
+
+```
+wool-plm-agent-system/
+├── .github/workflows/      # Automated CI/CD for agent testing & model eval
+├── config/
+│   ├── agents.yaml         # Configuration for OpenAI and Google model roles
+│   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
+│   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
+├── evolution/              # THE NEUROEVOLUTION ENGINE
+│   ├── crossover.py        # Logic for merging neural network "genomes"
+│   ├── fitness_engine.py   # Evaluates models on wool mechanical properties
+│   ├── mutation.py         # Handles stochastic layer/param changes
+│   └── model_generator.py  # SCRIPT TO GENERATE NEW NEURAL NETWORKS
+├── src/
+│   ├── agents/             # MULTIMODAL AGENT ORCHESTRATION
+│   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
+│   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
+│   │   └── supervisor.py   # LangGraph/CrewAI orchestrator to manage handoffs
+│   ├── engines/            # CORE COMPUTATIONAL MODELS
+│   │   ├── generative.py   # Generative algorithms for 3D wool structures
+│   │   └── deep_learning.py# Deep learning for predictive maintenance
+│   └── tools/              # MECHANICAL ENGINEERING UTILITIES
+│       ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
+│       └── lca_analyzer.py # Life Cycle Assessment for sustainability
+├── requirements.txt        # Updated: torch, langchain-google-genai, openai, pygad
+└── README.md               # Documentation of the self-evolving PLM system
+```
+
+###      ########
+
+########
+
+```
+wool-plm-agent-system/
+├── .github/workflows/      # Automated CI/CD for agent testing & model eval
+├── config/
+│   ├── agents.yaml         # Configuration for OpenAI and Google model roles
+│   ├── evolution.yaml      # Genetic Algorithm parameters (mutation rate, etc.)
+│   └── lifecycle.yaml      # Wool PLM specific constraints (ISO standards)
+├── evolution/              # THE NEUROEVOLUTION ENGINE
+│   ├── crossover.py        # Logic for merging neural network "genomes"
+│   ├── fitness_engine.py   # Evaluates models on wool mechanical properties
+│   ├── mutation.py         # Handles stochastic layer/param changes
+│   └── model_generator.py  # SCRIPT TO GENERATE NEW NEURAL NETWORKS
+├── src/
+│   ├── agents/             # MULTIMODAL AGENT ORCHESTRATION
+│   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
+│   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
+│   │   └── supervisor.py   # LangGraph/CrewAI orchestrator to manage handoffs
+│   ├── engines/            # CORE COMPUTATIONAL MODELS
+│   │   ├── generative.py   # Generative algorithms for 3D wool structures
+│   │   └── deep_learning.py# Deep learning for predictive maintenance
+│   └── tools/              # MECHANICAL ENGINEERING UTILITIES
+│       ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
+│       └── lca_analyzer.py # Life Cycle Assessment for sustainability
+├── requirements.txt        # Updated: torch, langchain-google-genai, openai, pygad
+└── README.md               # Documentation of the self-evolving PLM system
+```
+
+###      ########
