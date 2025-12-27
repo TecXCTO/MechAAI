@@ -2,40 +2,6 @@
 
 
 ###############
-```
-
-wool-plm-agent-system/
-├── .github/                # CI/CD workflows for testing agents
-├── config/                 # YAML/JSON configs for models & GA params
-├── data/                   # Raw wool fiber scans and CAD specs (gitignored)
-├── docs/                   # Technical documentation for PLM workflows
-├── evolution/              # Genetic Algorithm engine
-│   ├── crossover.py        # Logic for merging model architectures
-│   ├── fitness.py          # PLM-specific evaluation metrics
-│   ├── mutation.py         # Hyperparameter and layer mutations
-│   └── population.py       # Manages generations of neural networks
-├── src/                    # Primary source code
-│   ├── agents/             # Role-based agent definitions
-│   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
-│   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
-│   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
-│   ├── models/             # Pre-trained and evolved model classes
-│   │   ├── base_network.py # Blueprint for deep learning models
-│   │   └── multimodal.py   # Fusion logic for text/image/audio inputs
-│   ├── tools/              # Specialized mechanical engineering tools
-│   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
-│   │   └── simulation.py   # Physics-based simulation wrappers
-│   └── utils/              # Helper functions for API and data handling
-├── tests/                  # Unit tests for agents and GA logic
-├── .gitignore              # Standard Python and large data exclusions
-├── pyproject.toml          # Modern dependency management
-├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
-└── README.md               # Project overview and lifecycle goals
-```
-
-
-
-
 
 ```
 
@@ -293,3 +259,34 @@ wool-plm-agent-system/
 ```
 
 ###      ########
+
+```
+
+wool-plm-agent-system/
+├── .github/                # CI/CD workflows for testing agents
+├── config/                 # YAML/JSON configs for models & GA params
+├── data/                   # Raw wool fiber scans and CAD specs (gitignored)
+├── docs/                   # Technical documentation for PLM workflows
+├── evolution/              # Genetic Algorithm engine
+│   ├── crossover.py        # Logic for merging model architectures
+│   ├── fitness.py          # PLM-specific evaluation metrics
+│   ├── mutation.py         # Hyperparameter and layer mutations
+│   └── population.py       # Manages generations of neural networks
+├── src/                    # Primary source code
+│   ├── agents/             # Role-based agent definitions
+│   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
+│   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
+│   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
+│   ├── models/             # Pre-trained and evolved model classes
+│   │   ├── base_network.py # Blueprint for deep learning models
+│   │   └── multimodal.py   # Fusion logic for text/image/audio inputs
+│   ├── tools/              # Specialized mechanical engineering tools
+│   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
+│   │   └── simulation.py   # Physics-based simulation wrappers
+│   └── utils/              # Helper functions for API and data handling
+├── tests/                  # Unit tests for agents and GA logic
+├── .gitignore              # Standard Python and large data exclusions
+├── pyproject.toml          # Modern dependency management
+├── requirements.txt        # Legacy dependency list (PyTorch, LangChain, etc.)
+└── README.md               # Project overview and lifecycle goals
+```
