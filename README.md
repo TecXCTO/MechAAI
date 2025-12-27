@@ -102,7 +102,7 @@ wool-plm-agent-system/
 │   │   ├── cad/            # SolidWorks/FreeCAD specific code
 │   │   ├── llm/            # LangChain/AI agent logic
 │   │   └── database/       # PostgreSQL/SQLAlchemy logic
-│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent definiti    
+│   ├── agents/             # UNIT 4: Orchestration # AI reasoning and tool-calling logic, Role-based agent definition, │   │                        # MULTIMODAL AGENT ORCHESTRATION
 │   │   ├── base_agent.py    
 │   │   ├── orchestration_agent/ 
 │   │   │   ├── workflow_manager.py
@@ -115,6 +115,13 @@ wool-plm-agent-system/
 │   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
 │   │   ├── inspector.py    # Uses Google Gemini for vision/video QA
 │   │   └── supervisor.py   # Multi-agent orchestrator (LangGraph/CrewAI)
+│   ├── agents/             # MULTIMODAL AGENT ORCHESTRATION
+│   │   ├── openai_agent.py # Handles high-level design reasoning (GPT-4o)
+│   │   ├── google_agent.py # Handles vision/video inspection (Gemini 2.5)
+│   │   └── supervisor.py   # LangGraph/CrewAI orchestrator to manage handoffs
+│   ├── engines/            # CORE COMPUTATIONAL MODELS
+│   │   ├── generative.py   # Generative algorithms for 3D wool structures
+│   │   └── deep_learning.py# Deep learning for predictive maintenance
 │   │
 │   ├── evolution/          # Genetic Algorithm engine, <-- [ADD] THE SELF-GENERATION ENGINE # THE NEUROEVOLUTION ENGINE
 │   │   ├── __init__.py
@@ -141,6 +148,9 @@ wool-plm-agent-system/
 │   ├── integrations/       # Keep your SolidWorks/Ansys APIs
 │   │   └── wool_supply_chain/         <-- [ADD] API for wool sourcing/farming data
 │   ├── tools/              # Specialized mechanical engineering tools
+│   └── tools/              # MECHANICAL ENGINEERING UTILITIES
+│   │   ├── cad_exporter.py # Export to STEP/STL for wool-composite parts
+│   │   ├── lca_analyzer.py # Life Cycle Assessment for sustainability
 │   │   ├── lca_calc.py     # Sustainability/LCA reporting tools
 │   │   └── simulation.py   # Physics-based simulation wrappers
 │   ├── utils/              # Helper functions for API and data handling
