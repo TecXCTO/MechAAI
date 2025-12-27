@@ -94,7 +94,7 @@ wool-plm-agent-system/
 │   │   ├── physics.py      # Stress/Strain formulas
 │   │   └── materials.py    # Material entity definitions
 │   ├── use_cases/          # Lifecyle workflows (e.g. design_validation.py)
-│   │  ├── design_validation.py
+│   │   ├── design_validation.py
 │   ├── repositories/       # Repository interfaces and implementations # UNIT 2: The Data Gate (Interfaces)
 │   │   ├── base_repo.py    # ABC for data access
 │   │   └── cad_repo.py     # ABC for CAD file management
@@ -108,8 +108,8 @@ wool-plm-agent-system/
 │   │   │   ├── workflow_manager.py
 │   │   │   └── multimodal_bridge.py   <-- [ADD] Logic to swap GPT-4o (OpenAI) & Gemini (Google)
 │   │   └── wool_lifecycle_agent/      <-- [ADD] Specific Agent for Wool Mechanical Properties
-│   │       ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
-│   │       └── sustainability_lca.py  # Life cycle/Biodegradability tracking
+│   │   │   ├── fiber_analysis.py      # Microscopic image analysis (Multimodal)
+│   │   │   └── sustainability_lca.py  # Life cycle/Biodegradability tracking
 │   │   ├── design_agent/
 │   │   ├── designer_agent.py # The AI "Mechanical Agent" loop
 │   │   ├── designer.py     # Uses OpenAI for 3D generative CAD
